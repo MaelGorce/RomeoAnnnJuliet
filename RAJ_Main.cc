@@ -1,5 +1,5 @@
-#include "RAJ_Cmainwindow.hh"
-#include "RAJ_traces.hh"
+#include "RAJ_CMainwindow.hh"
+#include "RAJ_Traces.hh"
 #include <QApplication>
 
 int main(int argc, char *argv[])
