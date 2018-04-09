@@ -1,6 +1,16 @@
 #include "RAJ_CUnit.hh"
 #include "RAJ_Traces.hh"
 
+
+QColor ColorMap[6] = {
+    QColor(128,128,255),    // Romeo
+    QColor(255,128,128),    // Juliet
+    QColor(64,128,68),      // Peasant
+    QColor(200,0,0),        // Soldier
+    QColor(0,200,0),        // Archer
+    QColor(200,0,200)       // Witch
+};
+
 CUnit::CUnit(EUnitType eUnitType,
              uint32_t uiHP,
              uint32_t uiAP,
@@ -16,7 +26,7 @@ CUnit::CUnit(EUnitType eUnitType,
     m_bIsSelected(false)
 {
 
-    m_qoPalette.setColor(QPalette::Button,QColor(0,255,255));
+    m_qoPalette.setColor(QPalette::Button,ColorMap[eUnitType]);
     this->setPalette(m_qoPalette);
 
     this->setGeometry( m_uiPosX,m_uiPosY,m_uiDiametre,m_uiDiametre);

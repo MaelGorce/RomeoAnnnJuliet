@@ -18,6 +18,11 @@ CMainWindow::CMainWindow(QWidget *parent)
     m_uiHightMenuBar = m_poMenuBar->height();
     trace_debug("Hauteur de la barre de menu : " << m_uiHightMenuBar);
 
+    CUnit* poRandomUnit;
+    for (int i =0;i < 1500 ; ++i)
+    {
+        fnCreateRandomUnit(poRandomUnit);
+    }
     srand(time(NULL));
 
     trace_debug("Fin Construction de MainWindow");
@@ -38,7 +43,7 @@ void CMainWindow::SfnInMenuBar(EMenuBarPossibility eInputMenuBar)
             trace_debug("New");
             CUnit* poRandomUnit;
             fnCreateRandomUnit(poRandomUnit);
-            m_vpoUnitVector.push_back(poRandomUnit);
+
             break;
         case ESave:
             trace_debug("Save");
@@ -56,11 +61,12 @@ void CMainWindow::fnCreateRandomUnit(CUnit* poRandomUnit)
     //temporary for testing
     static uint32_t s_uiCountUnit=0;
     trace_debug("Création aléatoire d'unité no : " << ++s_uiCountUnit);
-    poRandomUnit = new CUnit(EMaxUnitType,
-                                  rand()%100,
-                                  rand()%20,
-                                  rand()%(C_WINDOW_LENGTH - C_NORMAL_UNIT_DIAMETRE),
-                                  m_uiHightMenuBar + rand()%(C_WINDOW_HIGHT - C_NORMAL_UNIT_DIAMETRE - m_uiHightMenuBar),
-                                  this);
+    poRandomUnit = new CUnit(static_cast<EUnitType>(rand()%EMaxUnitType),
+                             rand()%100,
+                             rand()%20,
+                             rand()%(C_WINDOW_LENGTH - C_NORMAL_UNIT_DIAMETRE),
+                             m_uiHightMenuBar + rand()%(C_WINDOW_HIGHT - C_NORMAL_UNIT_DIAMETRE - m_uiHightMenuBar),
+                             this);
     poRandomUnit->fnDump();
+    m_vpoUnitVector.push_back(poRandomUnit);
 }

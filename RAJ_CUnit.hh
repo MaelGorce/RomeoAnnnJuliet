@@ -5,19 +5,6 @@
 #include <QPushButton>
 #include "RAJ_Configuration.hh"
 
-#define C_NORMAL_DIAMETRE 10
-
-enum EUnitType
-{
-    ERomeo=0,
-    EJuliet,
-    EPeasant,
-    ESoldier,
-    EArcher,
-    EWitch,
-    EMaxUnitType
-};
-
 class CUnit : public QPushButton
 {
     Q_OBJECT
