@@ -2,10 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <vector>
 #include "RAJ_CMenubar.hh"
-
-#define C_WINDOW_HIGHT 720
-#define C_WINDOW_LENGTH 1280
+#include "RAJ_CUnit.hh"
+#include "RAJ_Configuration.hh"
 
 class CMainWindow : public QMainWindow
 {
@@ -19,7 +19,13 @@ public slots:
     void SfnInMenuBar(EMenuBarPossibility);
 
 private:
+
+    void fnCreateRandomUnit(CUnit *);
+
     CMenuBar* m_poMenuBar;
+    uint32_t m_uiHightMenuBar;
+    std::vector<CUnit*> m_vpoUnitVector;
+
 };
 
 #endif // MAINWINDOW_H

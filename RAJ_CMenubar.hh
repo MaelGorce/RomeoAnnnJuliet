@@ -11,7 +11,7 @@ enum EMenuBarPossibility
     ESave,
     ELoad,
     EHelp,
-    EMax
+    EMaxMenuBarPossibility
 };
 
 class CMenuBar : public QMenuBar

@@ -26,9 +26,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     RAJ_CMainwindow.cc \
     RAJ_CMenubar.cc \
-    RAJ_Main.cc
+    RAJ_Main.cc \
+    RAJ_CUnit.cc
 
 HEADERS += \
     RAJ_CMenubar.hh \
     RAJ_CMainwindow.hh \
-    RAJ_Traces.hh
+    RAJ_Traces.hh \
+    RAJ_CUnit.hh \
+    RAJ_Configuration.hh
